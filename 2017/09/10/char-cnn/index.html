@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine learning,Recurrent Nerual Network,Generative Model," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="char-rnnThis code implements multi-layer Recurrent Neural Network (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input">
+<meta name="keywords" content="Machine learning,Recurrent Nerual Network,Generative Model">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Example of Recurrent Nerual Networks">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/char-cnn/index.html">
+<meta property="og:site_name" content="CyberAttacker&#39;s Space">
+<meta property="og:description" content="char-rnnThis code implements multi-layer Recurrent Neural Network (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-09-17T14:48:20.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="An Example of Recurrent Nerual Networks">
+<meta name="twitter:description" content="char-rnnThis code implements multi-layer Recurrent Neural Network (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/10/char-cnn/"/>
+
+
+
+
+
+  <title>An Example of Recurrent Nerual Networks | CyberAttacker's Space</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CyberAttacker's Space</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Inception</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/char-cnn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangjksjtu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boy.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CyberAttacker's Space">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">An Example of Recurrent Nerual Networks</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T16:41:00+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Vision/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Vision</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="char-rnn"><a href="#char-rnn" class="headerlink" title="char-rnn"></a>char-rnn</h1><p>This code implements <strong>multi-layer Recurrent Neural Network</strong> (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input and trains a Recurrent Neural Network that learns to predict the next character in a sequence. The RNN can then be used to generate text character by character that will look like the original training data. The context of this code base is described in detail in my <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="external">blog<br>post</a>.</p>
+<p>If you are new to Torch/Lua/Neural Nets, it might be helpful to know that this code is really just a slightly more fancy version of this <a href="https://gist.github.com/karpathy/d4dee566867f8291f086" target="_blank" rel="external">100-line gist</a> that I wrote in Python/numpy. The code in this repo additionally: allows for multiple layers, uses an LSTM instead of a vanilla RNN, has more supporting code for model checkpointing, and is of course much more efficient since it uses mini-batches and can run on a GPU.</p>
+<a id="more"></a>
+<h2 id="Update-torch-rnn"><a href="#Update-torch-rnn" class="headerlink" title="Update: torch-rnn"></a>Update: torch-rnn</h2><p><a href="http://cs.stanford.edu/people/jcjohns/" target="_blank" rel="external">Justin Johnson</a> (@jcjohnson) recently re-implemented char-rnn from scratch with a much nicer/smaller/cleaner/faster Torch code base. It’s under the name <a href="https://github.com/jcjohnson/torch-rnn" target="_blank" rel="external">torch-rnn</a>. It uses Adam for optimization and hard-codes the RNN/LSTM forward/backward passes for space/time efficiency. This also avoids headaches with cloning models in this repo. In other words, torch-rnn should be the default char-rnn<br>implemention to use now instead of the one in this code base.</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><p>This code is written in Lua and requires <a href="http://torch.ch/" target="_blank" rel="external">Torch</a>. If you’re on Ubuntu, installing Torch in your home directory may look something like: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash</div><div class="line">$ git <span class="built_in">clone</span> https://github.com/torch/distro.git ~/torch --recursive</div><div class="line">$ <span class="built_in">cd</span> ~/torch; </div><div class="line">$ ./install.sh      <span class="comment"># and enter "yes" at the end to modify your bashrc</span></div><div class="line">$ <span class="built_in">source</span> ~/.bashrc</div></pre></td></tr></table></figure>
+<p>See the Torch installation documentation for more details. After Torch is installed we need to get a few more packages using <a href="https://luarocks.org/" target="_blank" rel="external">LuaRocks</a> (which already came with the Torch install). In particular:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ luarocks install nngraph </div><div class="line">$ luarocks install optim</div><div class="line">$ luarocks install nn</div></pre></td></tr></table></figure>
+<p>If you’d like to train on an NVIDIA GPU using CUDA (this can be to about 15x faster), you’ll of course need the GPU, and you will have to install the <a href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="external">CUDA Toolkit</a>. Then get the <code>cutorch</code> and <code>cunn</code> packages:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ luarocks install cutorch</div><div class="line">$ luarocks install cunn</div></pre></td></tr></table></figure>
+<p>If you’d like to use OpenCL GPU instead (e.g. ATI cards), you will instead need to install the <code>cltorch</code> and <code>clnn</code> packages, and then use the option <code>-opencl 1</code> during training (<a href="https://github.com/hughperkins/cltorch/issues" target="_blank" rel="external">cltorch issues</a>):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ luarocks install cltorch</div><div class="line">$ luarocks install clnn</div></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><p>All input data is stored inside the <code>data/</code> directory. You’ll notice that there is an example dataset included in the repo (in folder <code>data/tinyshakespeare</code>) which consists of a subset of works of Shakespeare. I’m providing a few more datasets on <a href="http://cs.stanford.edu/people/karpathy/char-rnn/" target="_blank" rel="external">this page</a>.</p>
+<p><strong>Your own data</strong>: If you’d like to use your own data then create a single file <code>input.txt</code> and place it into a folder in the <code>data/</code> directory. For example, <code>data/some_folder/input.txt</code>. The first time you run the training script it will do some preprocessing and write two more convenience cache files into <code>data/some_folder</code>.</p>
+<p><strong>Dataset sizes</strong>: Note that if your data is too small (1MB is already considered very small) the RNN won’t learn very effectively. Remember that it has to learn everything completely from scratch. Conversely if your data is large (more than about 2MB), feel confident to increase <code>rnn_size</code> and train a bigger model (see details of training below). It will work <em>significantly better</em>. For example with 6MB you can easily go up to <code>rnn_size</code> 300 or even more. The biggest that fits on my<br>GPU and that I’ve trained with this code is <code>rnn_size</code> 700 with <code>num_layers</code> 3 (2 is default).</p>
+<h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><p>Start training the model using <code>train.lua</code>. As a sanity check, to run on the included example dataset simply try:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ th train.lua -gpuid -1</div></pre></td></tr></table></figure>
+<p>Notice that here we are setting the flag <code>gpuid</code> to -1, which tells the code to train using CPU, otherwise it defaults to GPU 0.  There are many other flags for various options. Consult <code>$ th train.lua -help</code> for comprehensive settings. Here’s another example that trains a bigger network and also shows how you can run on your own custom dataset (this already assumes that <code>data/some_folder/input.txt</code> exists):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ th train.lua -data_dir data/some_folder -rnn_size 512 -num_layers 2 -dropout 0.5</div></pre></td></tr></table></figure>
+<p><strong>Checkpoints.</strong> While the model is training it will periodically write checkpoint files to the <code>cv</code> folder. The frequency with which these checkpoints are written is controlled with number of iterations, as specified with the <code>eval_val_every</code> option (e.g. if this is 1 then a checkpoint is written every iteration). The filename of these checkpoints contains a very important number: the <strong>loss</strong>. For example, a checkpoint with filename <code>lm_lstm_epoch0.95_2.0681.t7</code><br>indicates that at this point the model was on epoch 0.95 (i.e. it has almost done one full pass over the training data), and the loss on validation data was 2.0681. This number is very important because the lower it is, the better the checkpoint works. Once you start to generate data (discussed below), you will want to use the model checkpoint that reports the lowest validation loss. Notice that this might not necessarily be the last checkpoint at the end of training (due to possible<br>overfitting).</p>
+<p>Another important quantities to be aware of are <code>batch_size</code> (call it B), <code>seq_length</code> (call it S), and the <code>train_frac</code> and <code>val_frac</code> settings. The batch size specifies how many streams of data are processed in parallel at one time. The sequence length specifies the length of each stream, which is also the limit at which the gradients can propagate backwards in time. For example, if <code>seq_length</code> is 20, then the gradient signal will never backpropagate more than 20 time<br>steps, and the model might not <em>find</em> dependencies longer than this length in number of characters. Thus, if you have a very difficult dataset where there are a lot of long-term dependencies you will want to increase this setting. Now, if at runtime your input text file has N characters, these first all get split into chunks of size <code>BxS</code>. These chunks then get allocated across three splits: train/val/test according to the <code>frac</code> settings. By default <code>train_frac</code> is 0.95 and<br><code>val_frac</code> is 0.05, which means that 95% of our data chunks will be trained on and 5% of the chunks will be used to estimate the validation loss (and hence the generalization). If your data is small, it’s possible that with the default settings you’ll only have very few chunks in total (for example 100). This is bad: In these cases you may want to decrease batch size or sequence length.</p>
+<p>Note that you can also initialize parameters from a previously saved checkpoint using <code>init_from</code>.</p>
+<h3 id="Sampling"><a href="#Sampling" class="headerlink" title="Sampling"></a>Sampling</h3><p>Given a checkpoint file (such as those written to <code>cv</code>) we can generate new text. For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ th sample.lua cv/some_checkpoint.t7 -gpuid -1</div></pre></td></tr></table></figure>
+<p>Make sure that if your checkpoint was trained with GPU it is also sampled from with GPU, or vice versa. Otherwise the code will (currently) complain. As with the train script, see <code>$ th sample.lua -help</code> for full options. One important one is (for example) <code>-length 10000</code> which would generate 10,000 characters (default = 2000).</p>
+<p><strong>Temperature</strong>. An important parameter you may want to play with is <code>-temperature</code>, which takes a number in range (0, 1] (0 not included), default = 1. The temperature is dividing the predicted log probabilities before the Softmax, so lower temperature will cause the model to make more likely, but also more boring and conservative predictions. Higher temperatures cause the model to take more chances and increase diversity of results, but at a cost of more<br>mistakes.</p>
+<p><strong>Priming</strong>. It’s also possible to prime the model with some starting text using <code>-primetext</code>. This starts out the RNN with some hardcoded characters to <em>warm</em> it up with some context before it starts generating text. E.g. a fun primetext might be <code>-primetext &quot;the meaning of life is &quot;</code>. </p>
+<p><strong>Training with GPU but sampling on CPU</strong>. Right now the solution is to use the <code>convert_gpu_cpu_checkpoint.lua</code> script to convert your GPU checkpoint to a CPU checkpoint. In near future you will not have to do this explicitly. E.g.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ th convert_gpu_cpu_checkpoint.lua cv/lm_lstm_epoch30.00_1.3950.t7</div></pre></td></tr></table></figure>
+<p>will create a new file <code>cv/lm_lstm_epoch30.00_1.3950.t7_cpu.t7</code> that you can use with the sample script and with <code>-gpuid -1</code> for CPU mode.</p>
+<p>Happy sampling!</p>
+<h2 id="Tips-and-Tricks"><a href="#Tips-and-Tricks" class="headerlink" title="Tips and Tricks"></a>Tips and Tricks</h2><h3 id="Monitoring-Validation-Loss-vs-Training-Loss"><a href="#Monitoring-Validation-Loss-vs-Training-Loss" class="headerlink" title="Monitoring Validation Loss vs. Training Loss"></a>Monitoring Validation Loss vs. Training Loss</h3><p>If you’re somewhat new to Machine Learning or Neural Networks it can take a bit of expertise to get good models. The most important quantity to keep track of is the difference between your training loss (printed during training) and the validation loss (printed once in a while when the RNN is run on the validation data (by default every 1000 iterations)). In particular:</p>
+<ul>
+<li>If your training loss is much lower than validation loss then this means the network might be <strong>overfitting</strong>. Solutions to this are to decrease your network size, or to increase dropout. For example you could try dropout of 0.5 and so on.</li>
+<li>If your training/validation loss are about equal then your model is <strong>underfitting</strong>. Increase the size of your model (either number of layers or the raw number of neurons per layer)</li>
+</ul>
+<h3 id="Approximate-number-of-parameters"><a href="#Approximate-number-of-parameters" class="headerlink" title="Approximate number of parameters"></a>Approximate number of parameters</h3><p>The two most important parameters that control the model are <code>rnn_size</code> and <code>num_layers</code>. I would advise that you always use <code>num_layers</code> of either 2/3. The <code>rnn_size</code> can be adjusted based on how much data you have. The two important quantities to keep track of here are:</p>
+<ul>
+<li>The number of parameters in your model. This is printed when you start training.</li>
+<li>The size of your dataset. 1MB file is approximately 1 million characters.</li>
+</ul>
+<p>These two should be about the same order of magnitude. It’s a little tricky to tell. Here are some examples:</p>
+<ul>
+<li>I have a 100MB dataset and I’m using the default parameter settings (which currently print 150K parameters). My data size is significantly larger (100 mil &gt;&gt; 0.15 mil), so I expect to heavily underfit. I am thinking I can comfortably afford to make <code>rnn_size</code> larger.</li>
+<li>I have a 10MB dataset and running a 10 million parameter model. I’m slightly nervous and I’m carefully monitoring my validation loss. If it’s larger than my training loss then I may want to try to increase dropout a bit and see if that heps the validation loss.</li>
+</ul>
+<h3 id="Best-models-strategy"><a href="#Best-models-strategy" class="headerlink" title="Best models strategy"></a>Best models strategy</h3><p>The winning strategy to obtaining very good models (if you have the compute time) is to always err on making the network larger (as large as you’re willing to wait for it to compute) and then try different dropout values (between 0,1). Whatever model has the best validation performance (the loss, written in the checkpoint filename, low is good) is the one you should use in the end.</p>
+<p>It is very common in deep learning to run many different models with many different hyperparameter settings, and in the end take whatever checkpoint gave the best validation performance.</p>
+<p>By the way, the size of your training and validation splits are also parameters. Make sure you have a decent amount of data in your validation set or otherwise the validation performance will be noisy and not very informative.</p>
+<h2 id="Additional-Pointers-and-Acknowledgements"><a href="#Additional-Pointers-and-Acknowledgements" class="headerlink" title="Additional Pointers and Acknowledgements"></a>Additional Pointers and Acknowledgements</h2><p>This code was originally based on Oxford University Machine Learning class <a href="https://github.com/oxford-cs-ml-2015/practical6" target="_blank" rel="external">practical 6</a>, which is in turn based on <a href="https://github.com/wojciechz/learning_to_execute" target="_blank" rel="external">learning to execute</a> code from Wojciech Zaremba. Chunks of it were also developed in collaboration with my labmate <a href="http://cs.stanford.edu/people/jcjohns/" target="_blank" rel="external">Justin Johnson</a>.</p>
+<p>To learn more about RNN language models I recommend looking at:</p>
+<ul>
+<li><a href="https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks" target="_blank" rel="external">My recent talk</a> on char-rnn</li>
+<li><a href="http://arxiv.org/abs/1308.0850" target="_blank" rel="external">Generating Sequences With Recurrent Neural Networks</a> by Alex Graves</li>
+<li><a href="http://www.cs.utoronto.ca/~ilya/pubs/2011/LANG-RNN.pdf" target="_blank" rel="external">Generating Text with Recurrent Neural Networks</a> by Ilya Sutskever</li>
+<li><a href="http://www.fit.vutbr.cz/~imikolov/rnnlm/thesis.pdf" target="_blank" rel="external">Tomas Mikolov’s Thesis</a></li>
+</ul>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-learning/" rel="tag"># Machine learning</a>
+          
+            <a href="/tags/Recurrent-Nerual-Network/" rel="tag"># Recurrent Nerual Network</a>
+          
+            <a href="/tags/Generative-Model/" rel="tag"># Generative Model</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/09/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/17/Git_Book/" rel="prev" title="A Brief Quickstart for Git">
+                A Brief Quickstart for Git <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/boy.jpg"
+               alt="wangjksjtu" />
+          <p class="site-author-name" itemprop="name">wangjksjtu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Interested in ML and CV.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wangjksjtu" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#char-rnn"><span class="nav-number">1.</span> <span class="nav-text">char-rnn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-torch-rnn"><span class="nav-number">1.1.</span> <span class="nav-text">Update: torch-rnn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">1.3.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">1.3.1.</span> <span class="nav-text">Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training"><span class="nav-number">1.3.2.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling"><span class="nav-number">1.3.3.</span> <span class="nav-text">Sampling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips-and-Tricks"><span class="nav-number">1.4.</span> <span class="nav-text">Tips and Tricks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Monitoring-Validation-Loss-vs-Training-Loss"><span class="nav-number">1.4.1.</span> <span class="nav-text">Monitoring Validation Loss vs. Training Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approximate-number-of-parameters"><span class="nav-number">1.4.2.</span> <span class="nav-text">Approximate number of parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Best-models-strategy"><span class="nav-number">1.4.3.</span> <span class="nav-text">Best models strategy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Additional-Pointers-and-Acknowledgements"><span class="nav-number">1.5.</span> <span class="nav-text">Additional Pointers and Acknowledgements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">1.6.</span> <span class="nav-text">License</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangjksjtu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
