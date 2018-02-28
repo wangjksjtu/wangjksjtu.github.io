@@ -1,1016 +1,396 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
-
-
-
-
-
-
-<meta name="description" content="Interested in ML and CV.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CyberAttacker&#39;s Space">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="CyberAttacker&#39;s Space">
-<meta property="og:description" content="Interested in ML and CV.">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CyberAttacker&#39;s Space">
-<meta name="twitter:description" content="Interested in ML and CV.">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta name=viewport content=“width=800”>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+    /* Color scheme stolen from Sergey Karayev */
+    a {
+    color: #1772d0;
+    text-decoration:none;
     }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-
-
-  <title>CyberAttacker's Space</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">CyberAttacker's Space</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">Inception</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/Git_Book/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangjksjtu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boy.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CyberAttacker's Space">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/Git_Book/" itemprop="url">A Brief Quickstart for Git</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-17T20:15:00+08:00">
-                2017-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
-                    <span itemprop="name">Tutorial</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="QuickStart"><a href="#QuickStart" class="headerlink" title="QuickStart"></a>QuickStart</h2><h3 id="Initialize-one-repository"><a href="#Initialize-one-repository" class="headerlink" title="Initialize one repository"></a>Initialize one repository</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir ~/public_html</div><div class="line">cd ~/public_html</div><div class="line">echo &apos;My website is alive!&apos; &gt; index.html</div></pre></td></tr></table></figure>
-<p>To turn ~/public_html or any directory into a Git repository, run</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure>
-<p>Initialized empty Git repository in  <code>.git/</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/17/Git_Book/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/char-cnn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangjksjtu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boy.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CyberAttacker's Space">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/10/char-cnn/" itemprop="url">An Example of Recurrent Nerual Networks</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T16:41:00+08:00">
-                2017-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Computer-Vision/" itemprop="url" rel="index">
-                    <span itemprop="name">Computer Vision</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="char-rnn"><a href="#char-rnn" class="headerlink" title="char-rnn"></a>char-rnn</h1><p>This code implements <strong>multi-layer Recurrent Neural Network</strong> (RNN, LSTM, and GRU) for training/sampling from character-level language models. In other words the model takes one text file as input and trains a Recurrent Neural Network that learns to predict the next character in a sequence. The RNN can then be used to generate text character by character that will look like the original training data. The context of this code base is described in detail in my <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="external">blog<br>post</a>.</p>
-<p>If you are new to Torch/Lua/Neural Nets, it might be helpful to know that this code is really just a slightly more fancy version of this <a href="https://gist.github.com/karpathy/d4dee566867f8291f086" target="_blank" rel="external">100-line gist</a> that I wrote in Python/numpy. The code in this repo additionally: allows for multiple layers, uses an LSTM instead of a vanilla RNN, has more supporting code for model checkpointing, and is of course much more efficient since it uses mini-batches and can run on a GPU.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/10/char-cnn/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangjksjtu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boy.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CyberAttacker's Space">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/09/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T16:41:00+08:00">
-                2017-09-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
-                    <span itemprop="name">Tutorial</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/09/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/boy.jpg"
-               alt="wangjksjtu" />
-          <p class="site-author-name" itemprop="name">wangjksjtu</p>
-           
-              <p class="site-description motion-element" itemprop="description">Interested in ML and CV.</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/wangjksjtu" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                    
-                      GitHub
-                    
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">wangjksjtu</span>
-</div>
-
-
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Gemini
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    a:focus, a:hover {
+    color: #f09228;
+    text-decoration:none;
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    body,td,th,tr,p,a {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 18px
     }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
+    strong {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 18px;
+    }
+    heading {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    }
+    papertitle {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    }
+    name {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 35px;
+    }
+    name-cn {
+    font-family: Microsoft Yahei;
+    font-size: 33px;
+    }
+    em {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 600
+    }
+    em2 {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    }
+    em3 {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 22px;
+    }
+    .one
+    {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    }
+    .two
+    {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+    }
+    .fade {
+     transition: opacity .2s ease-in-out;
+     -moz-transition: opacity .2s ease-in-out;
+     -webkit-transition: opacity .2s ease-in-out;
+    }
+    .li {
+      display: flex;
+      justify-content: space-between;
+    }
+    span.highlight {
+        background-color: #ffffd0;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="imgs/BlackCat.png">
+  <title>Jingkang Wang</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+  <table width="850" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tr>
+    <td>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="67%" valign="middle">
+        <p>
+          <name>Jingkang Wang</name> <name-cn>（王靖康）</name-cn>
+        </p>
+        <em> Email: </em> &nbsp <em2> wangjksjtu@gmail.com </em2> <br>
+        <em> Phone: </em> &nbsp <em2> +86-158-2117-0337 </em2> <br>
+        <em> Location: </em> &nbsp <em2>Shanghai, China </em2>
+        <p align=center>
+          <a href="mailto:wangjksjtu@gmail.com">Email</a> &nbsp/&nbsp
+          <a href="Jingkang Wang-CV.pdf">CV</a> &nbsp/&nbsp
+          <a href="https://github.com/wangjksjtu">GitHub</a> &nbsp/&nbsp
+          <a href="https://www.linkedin.com/in/"> </a> LinkedIn &nbsp/&nbsp
+          <a href="https://www.wangjksjtu.com.cn"> Blog </a>
+        </p>
+        </td>
+        <td width="33%">
+        <img src="imgs/wjk_circle.jpg">
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+          <td width="100%" valign="middle">
+            <heading>Biography</heading>
+            <p>
+              I am a junior undergraduate student in Information Security, <a href="http://infosec.sjtu.edu.cn/en.php">Cyber Security College</a>, Shanghai Jiao Tong University. Currently,
+              I work as a research assistant at <a href="http://mvig.sjtu.edu.cn/">Machine Vision and Inteligence Group</a> (MVIG) in CS,
+              directed by Professor <a href="http://mvig.sjtu.edu.cn/index.html">Cewu Lu</a>, and I am also supervised by Associate Professor
+              <a href="http://infosec.sjtu.edu.cn/en.php?m=article&f=view&id=151">Gongshen Liu</a>
+              at <a href="http://nelcat.sjtu.edu.cn/index.html">NELCAT</a>.
+              Recently, I am doing research on 3D vision and NLP.
+            </p>
+            <p>
+              I am applying for Ph.D. programs which start from Fall 2019. My research interests involove computer vision,
+              machine learning (especially deep learning), and natural language processing.
+            </p>
+          </td>
+        </tr>
+<!--      <tr>
+        <td width="100%" valign="middle">
+          <heading>Research</heading>
+          <p>
+          I'm interested in computer vision, machine learning, statistics, optimization, image processing, virtual reality,
+          and computational photography. Much of my research is about inferring the physical world
+          (shape, depth, motion, paint, light, colors, etc) from images. I have also worked in astronomy and biology.
+          Representative papers are <span class="highlight">highlighted</span>.
+          </p>
+        </td>
+      </tr>
+-->
+      </table>
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Education</heading>
+          <p>
+            <em3>Shanghai Jiao Tong University, China</em3> <br>
+            <strong> B.E. in Cyber Security</strong>
+            (Second-class College in <a href="http://english.seiee.sjtu.edu.cn/">SEIEE</a>)
+          </p>
+          <li> <strong> Sept. 2015 to June. 2019 </strong> (Expected) </li>
+          <li> <strong>GPA:</strong> 91.4/100 (2/98) </li>
+        </td>
+        <td width="10%">
+        <img src="imgs/sjtu.png">
+        </td>
+      </tr>
+      </table>
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Awards & Scholarships</heading>
+          <p>
+            <div class="li">
+              <li> <strong>Chinese National Scholarships</strong> &nbsp <strong> (Top 2%)</strong> </li>
+              <div class="nav">
+                <a> 2016, 2017 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>Level-A</strong> SJTU Outstanding Scholarships &nbsp <strong>(Top 1%)</strong> </li>
+              <div class="nav">
+                <a> 2016, 2017 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>Second Prize</strong> in <strong>N</strong>ational <strong>C</strong>ollege <strong>S</strong>tudents
+                <strong>I</strong>nformation <strong>S</strong>ecurity <strong>C</strong>ompetition </li>
+              <div class="nav">
+                <a> 2017 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>Second Prize</strong> in The <strong>C</strong>hinese <strong>M</strong>athematics
+                <strong>C</strong>ompetition <strong>(CMC)</strong></li>
+              <div class="nav">
+                <a> 2017 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>Third Prize</strong> in Parts of The National Physics Contest for College Students </li>
+              <div class="nav">
+                <a> 2016 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>SJTU Merit Students</strong> </li>
+              <div class="nav">
+                <a> 2016, 2017 </a>
+              </div>
+            </div>
+            <div class="li">
+              <li> <strong>SJTU Excellent League Cadres</strong> </li>
+              <div class="nav">
+                <a> 2016, 2017 </a>
+              </div>
+            </div>
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <table width="100%" align="center" border="0" cellpadding="20">
+    <tr>
+      <td width="100%" valign="middle">
+        <heading>Publications</heading>
+      </td>
+    </tr>
+    </table>
+    <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="imgs/partphys_cvpr.png" alt="partphys_cvpr" width="330" height="165"></td>
+        <td width="75%" valign="top">
+        <p>
+          <papertitle>Anonymous Submission</papertitle>
+          </a>
+          <br>
+          <strong>Computer Vision and Pattern Recognition (CVPR), 2018   (Accepted)</strong>
+        </p>
+        </td>
+      </tr>
+    </table>
+    <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="25%"><img src="imgs/partphys_acl.png" alt="partphys_acl" width="330" height="165"></td>
+        <td width="75%" valign="top">
+        <p>
+          <papertitle>Anonymous Submission</papertitle>
+          </a>
+          <br>
+          <strong>56th Annual Meeting of the Association for Computational Linguistics (ACL), 2018 (Submitted)</strong>
+        </p>
+        </td>
+      </tr>
+    </table>
+<!--      <tr>
+        <td width="100%" valign="middle">
+          <heading>Publications</heading>
+        </td>
+      </tr> -->
+      <table width="100%" align="center" border="0" cellpadding="20">
+      <tr>
+        <td width="100%" valign="middle">
+          <heading>Course Projects</heading>
+        </td>
+      </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+        <tr>
+          <td width="25%"><img src="imgs/neo4j.png" alt="neo4j" width="240" height="200"></td>
+          <td width="75%" valign="top">
+          <p>
+            <a href="https://github.com/wangjksjtu/DSSE-GraphDB">
+            <papertitle>DSSE-GraphDB: Dynamic Searchable Symmetric Encryption System Based on Graph Database</papertitle>
+            </a>
+            <br>
+            <strong>Jinrui Sha</strong>, <font color="red"><strong>Jingkang Wang</strong></font>, Yijun Leng and Weihong Lin, 2017
+          <p>
+            We simplified and improved the original algorithm proposed by <a href="https://link.springer.com/chapter/10.1007/978-3-642-39884-1_22"><strong>Seny Kamara</strong></a> and proposed several additional policies to enhance security of a system.
+            Improved algorithm was implemented utilizing Neo4j Graph Database and successfully validated based on large-scale ciphers. Our work finally got
+            a <strong>Second Price</strong> at Final. In this project, I was in charge of the back-end implementation of algorithm based on the Neo4j.
+          </p>
+          </p>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+        <tr>
+          <td width="25%"><img src="imgs/JKSniffer.png" alt="JKSniffer" width="240" height="180"></td>
+          <td width="75%" valign="top">
+          <p>
+            <a href="https://github.com/wangjksjtu/JKSniffer">
+            <papertitle>JKSniffer: An implementation of Sniffer Tool using Python</papertitle>
+            </a>
+            <br>
+            <font color="red"><strong>Jingkang Wang</strong></font> and
+            Yedi Meng, 2017
+          <p>
+            It was assigned in <strong>IS301</strong> (Computer Communication and Network). We used <strong>Python</strong> to implement a <strong>Sniffer Tool</strong>,
+            which was involoved in packet capturing, parsing, sending, filtering, searching, IP fragmentation and reassembly, IO (pcap, pdf),
+            ARP poisoning, and GUI.
+          </p>
+          </p>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" align="center" border="0" cellpadding="20">
+        <tr>
+          <td width="25%"><img src="imgs/alarm.jpg" alt="alarm" width="240" height="240"></td>
+          <td width="75%" valign="top">
+          <p>
+            <a href="https://github.com/wangjksjtu/SuperAlarm">
+            <papertitle>SuperAlarm: An android app for Deadline Management</papertitle>
+            </a>
+            <br>
+            <font color="red"><strong>Jingkang Wang</strong></font>, Lin Wang, Jie Ni, Jilai Zheng, Lei Wang,
+            Jinrui Sha and Linbo Yang</a>, 2016
+          <p>
+            It was assigned in <strong>SE407</strong> (Software Engineering). We tried <strong>Scrum</strong>
+            to finish a APP development in two month, during which we not only study coding skills but learn how to <strong>work as a team</strong>.
+            I also learn how to be a qualified leader and how to cooperate with team members.
+          </p>
+          </p>
+          </td>
+        </tr>
+      </table>
 
 
-  
+      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+      <tr>
+        <td>
+        <br>
+        <p align="right">
+          <font size="2">
+          <a href="https://github.com/jonbarron/jonbarron_website">Thanks jonbarron for this amazing work.</a>
+	    </font>
+        </p>
+        </td>
+      </tr>
+      </table>
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
-  
-
-  
-
-  
-
-</body>
+      </script> <script type="text/javascript">
+      try {
+          var pageTracker = _gat._getTracker("UA-7580334-1");
+          pageTracker._trackPageview();
+          } catch(err) {}
+      </script>
+    </td>
+    </tr>
+  </table>
+  </body>
 </html>
+
+<!--
+  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+        <tr onmouseout="bs_stop()" onmouseover="bs_start()"  bgcolor="#ffffd0">
+          <td width="25%">
+
+            <div class="one">
+                <div class="two" id = 'bs_image'><img src='BS_after.jpg'></div>
+                <img src='BS_before.jpg'>
+            </div>
+            <script type="text/javascript">
+            function bs_start() {
+              document.getElementById('bs_image').style.opacity = "1";
+            }
+            function bs_stop() {
+              document.getElementById('bs_image').style.opacity = "0";
+            }
+            bs_stop()
+            </script>
+
+              </td>
+              <td valign="top" width="75%">
+              <p><a href="https://drive.google.com/file/d/1zFzCaFwkGK1EGmJ_KEqb-ZsRJhfUKN2S/view?usp=sharing">
+        <papertitle>The Fast Bilateral Solver</papertitle></a><br>
+        <strong>Jonathan T. Barron</strong>, <a href="https://cs.stanford.edu/~poole/">Ben Poole</a> <br>
+                <em>European Conference on Computer Vision (ECCV)</em>, 2016 &nbsp <font color="red"><strong>(Best Paper Honorable Mention)</strong></font> <br>
+                <a href = "http://arxiv.org/abs/1511.03296">arXiv</a>
+                /
+                <a href="https://drive.google.com/file/d/0B4nuwEMaEsnmdEREcjhlSXM2NGs/view?usp=sharing">supplement</a>
+                /
+                <a href="BarronPooleECCV2016.bib">bibtex</a>
+		/
+		<a href="http://videolectures.net/eccv2016_barron_bilateral_solver/">video (they messed up my slides, use &rarr;)</a>
+		/
+		<a href="https://drive.google.com/file/d/19x1AeN0PFus6Pjrd8nR-vCmJ6bNEefsC/view?usp=sharing">keynote</a> (or <a href="https://drive.google.com/file/d/1p9nduiymK9jUh7WfwlsMjBfW8RoNe_61/view?usp=sharing">PDF</a>)
+                /
+                <a href="https://github.com/poolio/bilateral_solver">code</a>
+                /
+                <a href="https://drive.google.com/file/d/0B4nuwEMaEsnmaDI3bm5VeDRxams/view?usp=sharing">depth super-res results</a>
+                /
+                <a href="BarronPooleECCV2016_reviews.txt">reviews</a>
+              <p></p>
+              <p>Our solver smooths things better than other filters and faster than other optimization algorithms, and you can backprop through it.
+              <p></p>
+              </a></p>
+              </td>
+            </tr>
+-->
