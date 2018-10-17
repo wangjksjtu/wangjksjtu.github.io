@@ -64,8 +64,10 @@ from: https://designschool.canva.com/blog/website-color-schemes/
       padding-left: 0.8em; } }
 
 body, ul{
+  max-width: 100%;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  -webkit-text-size-adjust: 100%;}
 
 ul, ol {
   margin-left: 1.6em;

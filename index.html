@@ -1,46 +1,114 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-  <meta name=viewport content=“width=800”>
+  <!-- <meta name=viewport content=“width=800”> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="icon" type="image/png" href="imgs/BlackCat.png">
+  <script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <header class="site-header">
-
   <div class="wrapper">
       <div class="site-header-container">
           <div class="title-container">
           </div>
-      <div class="nav-container">
-            <nav class="site-nav" id="nav-menu">
-      <ul class="menu">
-      <li2>
-          <a href="" class="page-link">Home</a>
-      </li2>
-      <li2>
-          <a href="#biography" class="page-link">Education</a>
-      </li2>
-      <li2>
-          <a href="#research" class="page-link">Research</a>
-      </li2>
-      <li2>
-          <a href="#internships" class="page-link">Internships</a>
-      </li2>
-      <li2>
-          <a href="#awards" class="page-link">Awards</a>
-      </li2>
-      <li2>
-          <a href="Jingkang_CV.pdf" target='_blank' class="page-link">CV</a>
-      </li2>
-      </ul>
+          <div class="nav-container">
+          <nav class="site-nav" id="nav-menu">
+          <ul class="menu">
+          <li2 class = "page-link-container active">
+              <a href="" class="page-link">Home</a>
+          </li2>
+          <li2 class = "page-link-container">
+              <a href="#biography" class="page-link">Education</a>
+          </li2>
+          <li2 class = "page-link-container">
+              <a href="#research" class="page-link">Research</a>
+          </li2>
+          <li2 class = "page-link-container">
+              <a href="#internships" class="page-link">Internships</a>
+          </li2>
+          <li2 class = "page-link-container">
+              <a href="#awards" class="page-link">Awards</a>
+          </li2>
+          <li2 class = "page-link-container">
+              <a href="Jingkang_CV.pdf" target='_blank' class="page-link">CV</a>
+          </li2>
+          </ul>
+          </nav>
+          <div class="mobile-nav-icon-container">
+                        <i class="fa fa-bars " aria-hidden="true"></i>
+          </div>
       </div>
+    </div>
+  </div>
+  <div class="wrapper" id="mobile-nav-menu">
+    <ul class="menu">
+    <li2 class = "page-link-container active">
+        <a href="" class="page-link">Home</a>
+    </li2>
+    <li2 class = "page-link-container">
+        <a href="#biography" class="page-link">Education</a>
+    </li2>
+    <li2 class = "page-link-container">
+        <a href="#research" class="page-link">Research</a>
+    </li2>
+    <li2 class = "page-link-container">
+        <a href="#internships" class="page-link">Internships</a>
+    </li2>
+    <li2 class = "page-link-container">
+        <a href="#awards" class="page-link">Awards</a>
+    </li2>
+    <li2 class = "page-link-container">
+        <a href="Jingkang_CV.pdf" target='_blank' class="page-link">CV</a>
+    </li2>
+    </ul>
+  </div>
   </header>
   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript">
+  //console.log('including nav.js');
+  $('.mobile-nav-icon-container').click(function(){
+  $('#mobile-nav-menu').toggle();
+  var expanded = $('#mobile-nav-menu').css('display') != 'none';
+  if (expanded){
+      $(this).find('i').removeClass('fa-bars').addClass('fa-times');
+  } else {
+      $(this).find('i').removeClass('fa-times').addClass('fa-bars');
+  }
+  });
+  $('.page-link-container').on('click',function () {
+  window.location.href = $(this).find('a').attr('href');
+  });
+  </script>
+  <script type="text/javascript">
+  //remove CSS rules for hover on mobile devices
+  //http://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices
+  var touch = 'ontouchstart' in document.documentElement
+  || navigator.maxTouchPoints > 0
+  || navigator.msMaxTouchPoints > 0;
+  if (touch) { // remove all :hover stylesheets
+  try { // prevent exception on browsers not supporting DOM styleSheets properly
+      for (var si in document.styleSheets) {
+          var styleSheet = document.styleSheets[si];
+          if (!styleSheet.rules) continue;
 
+          for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+              if (!styleSheet.rules[ri].selectorText) continue;
+
+              if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                  styleSheet.deleteRule(ri);
+              }
+          }
+      }
+  } catch (ex) {}
+  }
+  </script>
   <script>
   window.onscroll = function() {scrollFunction()};
-
   function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           document.getElementById("myBtn").style.display = "block";
@@ -48,7 +116,6 @@
           document.getElementById("myBtn").style.display = "none";
       }
   }
-
   // When the user clicks on the button, scroll to the top of the document
   function topFunction() {
       document.body.scrollTop = 0; // For Safari
