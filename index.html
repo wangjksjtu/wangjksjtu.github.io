@@ -1,86 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+Jingkang_CV<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
   <meta name=viewport content=“width=800”>
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    a {
-    color: #1772d0;
-    text-decoration:none;
-    }
-    a:focus, a:hover {
-    color: #f09228;
-    text-decoration:none;
-    }
-    body,td,th,tr,p,a {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 18px
-    }
-    strong {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 18px;
-    }
-    heading {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    }
-    papertitle {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 19px;
-    font-weight: 700;
-    }
-    name {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 35px;
-    }
-    name-cn {
-    font-family: Microsoft Yahei;
-    font-size: 33px;
-    }
-    em {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 21px;
-    font-weight: 600
-    }
-    em2 {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 20px;
-    }
-    em3 {
-    font-family: 'Lato', Verdana, Helvetica, sans-serif;
-    font-size: 22px;
-    }
-    .one
-    {
-    width: 160px;
-    height: 160px;
-    position: relative;
-    }
-    .two
-    {
-    width: 160px;
-    height: 160px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
-    }
-    .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
-    }
-    .li {
-      display: flex;
-      justify-content: space-between;
-    }
-    span.highlight {
-        background-color: #ffffd0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="imgs/BlackCat.png">
+  <header class="site-header">
+
+  <div class="wrapper">
+      <div class="site-header-container">
+          <div class="title-container">
+          </div>
+      <div class="nav-container">
+            <nav class="site-nav" id="nav-menu">
+      <ul class="menu">
+      <li2>
+          <a href="" class="page-link">Home</a>
+      </li2>
+      <li2>
+          <a href="#biography" class="page-link">Education</a>
+      </li2>
+      <li2>
+          <a href="#research" class="page-link">Research</a>
+      </li2>
+      <li2>
+          <a href="#internships" class="page-link">Internships</a>
+      </li2>
+      <li2>
+          <a href="#awards" class="page-link">Awards</a>
+      </li2>
+      <li2>
+          <a href="Jingkang_CV.pdf" target='_blank' class="page-link">CV</a>
+      </li2>
+      </ul>
+      </div>
+  </header>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script>
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("myBtn").style.display = "block";
+      } else {
+          document.getElementById("myBtn").style.display = "none";
+      }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  </script>
   <title>Jingkang Wang</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -100,7 +74,7 @@
         <em> School: </em> &nbsp <em2> Shanghai Jiao Tong Univerisity (SJTU) </em2>
         <p align=center>
           <a href="mailto:wangjksjtu@gmail.com">Email</a> &nbsp/&nbsp
-          <a href="Jingkang Wang-CV.pdf">CV</a> &nbsp/&nbsp
+          <a href="Jingkang_CV.pdf">CV</a> &nbsp/&nbsp
           <a href="https://github.com/wangjksjtu">GitHub</a> &nbsp/&nbsp
           <a href="https://www.linkedin.com/in/jingkang-wang-316009158/">LinkedIn &nbsp&nbsp
         </p>
@@ -113,20 +87,20 @@
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tr>
           <td width="100%" valign="middle">
-            <heading>News</heading>
+            <heading id="news">News</heading>
             <p>
               <li><strong>DBNet Autonomous Driving Data (prepared & raw) are released <a href ="http://www.dbehavior.net/download.aspx"> here</a>! </strong></li>
-              <li>Demo code and some tools for <a href ="http://www.dbehavior.net/">DBNet</a> is released on the <a href ="https://github.com/driving-behavior/DBNet">Github</a>. </li>
+              <li>Demo code and some tools for <a href ="http://www.dbehavior.net/">DBNet</a> are released on the <a href ="https://github.com/driving-behavior/DBNet">Github</a>. </li>
               <li>The resources of our CVPR 2018 work are available: <a href ="http://openaccess.thecvf.com/content_cvpr_2018/papers/Chen_LiDAR-Video_Driving_Dataset_CVPR_2018_paper.pdf">[paper]</a>, <a href ="https://github.com/driving-behavior/DBNet">[code]</a>, <a href ="http://www.dbehavior.net/data/demo.mp4">[video]</a>, <a href ="http://www.dbehavior.net/">[website]</a>, <a href ="http://www.dbehavior.net/task.html">[challenge]</a></li>
             </p>
           </td>
         </tr>
-        <hr>
+        <hr class="soft">
       </table>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tr>
           <td width="100%" valign="middle">
-            <heading>Biography</heading>
+            <heading id="biography">Biography</heading>
             <p>
               I am a senior undergraduate student in Information Security, Shanghai Jiao Tong University.
               I work as an undergraduate researcher at <a href="http://mvig.sjtu.edu.cn/">Machine Vision and Intelligence Group</a> (MVIG),
@@ -135,20 +109,20 @@
             </p>
             <p>
               Currently, I am a research intern at UC Berkeley, working with Prof. <a href="http://bli89.web.engr.illinois.edu/home.html">Bo Li</a> and Prof. <a href="http://people.eecs.berkeley.edu/~dawnsong/">Dawn Song</a>.
-              During the internship, I do some explorations on secure AI and reinforcement learning, collaborating with Dr. <a href="https://ruoxijia.github.io/">Ruoxi Jia</a>, Prof. <a href="http://www.yliuu.com/">Yang Liu</a> and Prof. <a href="https://www1.icsi.berkeley.edu/~fractor/homepage/Welcome.html">Gerald Friedland</a>, fortunately.
+              During the internship, I do some explorations on secure AI and reinforcement learning, collaborating with Prof. <a href="https://www1.icsi.berkeley.edu/~fractor/homepage/Welcome.html">Gerald Friedland</a>, Dr. <a href="https://ruoxijia.github.io/">Ruoxi Jia</a> and Prof. <a href="http://www.yliuu.com/">Yang Liu</a>, fortunately.
             </p>
             <p>
-              I am <strong>applying for Ph.D. programs</strong> which start in Fall 2019. My research interests involve <strong>Adv. ML</strong>, <strong>Secure AI</strong>, <strong>Blockchain</strong> and <strong>Computer Vision</strong>. I am also open to exploring other interesting topics in <strong>security</strong> (e.g., robust algorithms) and <strong>machine learning</strong> (e.g., RL, robotics).
+              <strong>I am applying for Ph.D. programs which start in Fall 2019.</strong> My research interests involve <strong>Machine Learning</strong>, <strong>Security</strong> and <strong>Computer Vision</strong>, especially the intersections of them.
             </p>
           </td>
         </tr>
-        <hr>
+        <hr class="soft">
       </table>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <hr>
+      <hr class="soft">
       <tr>
         <td width="100%" valign="middle">
-          <heading>Education</heading>
+          <heading id="education">Education</heading>
           <p>
             <em3>Shanghai Jiao Tong University, China</em3> <br>
             <strong> B.E. in Information Security</strong>
@@ -162,11 +136,11 @@
         </td>
       </tr>
       </table>
-      <hr>
+      <hr class="soft">
   <table width="100%" align="center" border="0" cellpadding="20">
   <tr>
     <td width="100%" valign="middle">
-      <heading>Publications</heading>
+      <heading id="research">Publications</heading>
     </td>
   </tr>
   </table>
@@ -246,7 +220,7 @@
     -->
   </table>
   <table width="100%" align="center" border="0" cellpadding="20">
-  <hr>
+  <hr class="soft">
   <tr>
     <td width="100%" valign="middle">
       <heading>Working Papers</heading>
@@ -372,7 +346,7 @@
       </td>
     </tr>
   </table>
-  <hr>
+  <hr class="soft">
   <table width="100%" align="center" border="0" cellpadding="20">
   <tr>
     <td width="100%" valign="middle">
@@ -435,16 +409,16 @@
       </td>
     </tr>
   </table>
-  <hr>
+  <hr class="soft">
   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
   <tr>
     <td width="100%" valign="middle">
-      <heading>Research Internships</heading>
+      <heading id="internships">Research Internships</heading>
       <p>
         <strong><em3>Machine Vision and Intelligence Group (MVIG)</em3></strong> <br>
         <em2><i>Undergraduate Researcher</i></em2>
       </p>
-      <li> <strong> Advisor: </strong> Professor Cewu Lu </li>
+      <li> <strong> Advisor: </strong> Professor <a href="http://www.mvig.org/">Cewu Lu</a> </li>
       <li> <strong> Research Focus:</strong> Computer Vision; Deep Learning; Autonomous Driving </li>
     </td>
     <td width="10%">
@@ -457,7 +431,7 @@
         <strong><em3>University of California, Berkeley</em3></strong> <br>
         <em2><i>Research Intern (Remotely)</i></em2>
       </p>
-      <li> <strong> Advisor: </strong> Professors Bo Li and Dawn Song </li>
+      <li> <strong> Advisor: </strong> Professors <a href="http://www.crystal-boli.com/">Bo Li</a> and <a href="https://people.eecs.berkeley.edu/~dawnsong/">Dawn Song</a> </li>
       <li> <strong> Research Focus:</strong> Secure AI; Reinforcement Learning </li>
     </td>
     <td width="10%">
@@ -470,7 +444,7 @@
         <strong><em3>Shanghai Key Laboratory of Integrated Technology</em3></strong> <br>
         <em2><i>Research Assistant</i></em2>
       </p>
-      <li> <strong> Advisor: </strong> Professor Lei Fan </li>
+      <li> <strong> Advisor: </strong> Professor <a href="https://dblp.uni-trier.de/pers/hd/f/Fan:Lei">Lei Fan</a> </li>
       <li> <strong> Research Focus:</strong> Blockchain; Privacy Preserving;  Searchable Encryption </li>
     </td>
     <td width="10%">
@@ -483,8 +457,8 @@
         <strong><em3>National Engineering Lab for Information Context Analysis Technology</em3></strong> <br>
         <em2><i>Research Assistant</i></em2>
       </p>
-      <li> <strong> Advisor: </strong> Professor Gongshen Liu </li>
-      <li> <strong> Research Focus:</strong> Data mining; Passward Generation; Natural Language Processing </li>
+      <li> <strong> Advisor: </strong> Professor <a href="https://dblp.org/pers/hd/l/Liu:Gongshen">Gongshen Liu</a> </li>
+      <li> <strong> Research Focus:</strong> Data mining; Password Generation; Natural Language Processing </li>
     </td>
     <td width="10%">
       <img src="imgs/sjtu.png">
@@ -492,14 +466,14 @@
   </tr>
 </table>
 <table>
-  <hr>
+  <hr class="soft">
   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
     <tr>
       <td width="100%" valign="middle">
-        <heading>Scholarships</heading>
+        <heading id="awards">Scholarships</heading>
         <p>
           <div class="li">
-            <li> <strong>National Scholarships</strong> &nbsp <strong>(Top 2%)</strong> </li>
+            <li> <strong>National Scholarships</strong> &nbsp <strong>(Top 0.2% Nationwide)</strong> </li>
             <div class="nav">
               <a> 2016, 2017, 2018 </a>
             </div>
@@ -517,11 +491,11 @@
             </div>
           </div>
   </table>
-  <hr>
+  <hr class="soft">
   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
     <tr>
       <td width="100%" valign="middle">
-        <heading>Awards</heading>
+        <heading>Honors & Awards</heading>
         <p>
           <div class="li">
             <li> <strong>First Prize</strong> in National College Students
@@ -531,7 +505,7 @@
             </div>
           </div>
           <div class="li">
-            <li> <strong>Meritorious Winner Prize</strong> of Mathematical Contest in Modeling </li>
+            <li> <strong>Meritorious Winner Prize</strong> in Mathematical Contest in Modeling </li>
             <div class="nav">
               <a> 2018 </a>
             </div>
@@ -572,16 +546,26 @@
       </td>
     </tr>
   </table>
-    <!--
-    <table width="100%" align="center" border="0" cellpadding="20">
-      <hr>
+  <table width="100%" align="center" border="0" cellpadding="20">
+      <hr class="soft">
       <tr>
         <td width="100%" valign="middle">
-          <heading>Selected Projects</heading>
+          <heading>Open-source Contrib.</heading>
+          <p>
+          <ul>
+          <li><a href="https://github.com/openai/baselines" target="_blank" rel="external">
+            <i class="fa fa-github" aria-hidden="true"></i><strong> OpenAI-baselines</strong></a>: A set of high-quality implementations of RL algorithms <iframe src="https://ghbtns.com/github-btn.html?user=openai&repo=baselines&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe> </li>
+          <li><a href="https://github.com/driving-behavior/DBNet" target="_blank" rel="external">
+            <i class="fa fa-github" aria-hidden="true"></i><strong> DBNet</strong></a>: A large-scale driving behavior dataset (videos + point clouds) <iframe src="https://ghbtns.com/github-btn.html?user=driving-behavior&repo=DBNet&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          </li>
+          <li><a href="https://github.com/SJTU-SCS/awesome-scs" target="_blank" rel="external">
+            <i class="fa fa-github" aria-hidden="true"></i><strong> awesome-scs</strong></a>: Programming reference for Information Security Major <iframe src="https://ghbtns.com/github-btn.html?user=SJTU-SCS&repo=awesome-scs&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          </li>
+          </ul>
+          </p>
         </td>
       </tr>
-    </table>
-    -->
+  </table>
     <!--
       <table width="100%" align="center" border="0" cellpadding="20">
         <tr>

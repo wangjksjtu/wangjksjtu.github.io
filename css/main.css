@@ -1,0 +1,405 @@
+/* Typography Constants
+========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,400,600,700,800,900");
+/* text-related varaiables */
+/* system typefaces */
+/* generic typefaces */
+/* type scale */
+/* Colors
+==========================================================================
+generator: https://coolors.co/
+from: https://designschool.canva.com/blog/website-color-schemes/
+*/
+/* basic */
+/* Website Variables
+========================================================================== */
+/* global */
+/*todo color*/
+/* headings */
+/* links */
+/* rules */
+/* header */
+/*todo color*/
+/* header nav */
+/* active page in nav gets underline */
+/* header title */
+/* footer */
+/* image captions */
+/* code */
+/* publications */
+/* Import Other CSS Files
+========================================================================== */
+.unselectable, .site-header, .site-footer {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+.helper-text, .publication-abstract:before, .publication-links:before, .publication-code:before, .publication-note:before, .action-text, .action-text-open:before, .action-text-close:before, .software-contributors:before, .software-source:before, .software-demo:before, .software-note:before {
+  color: #bbbbbb;
+  text-transform: lowercase; }
+
+.reset-spacing, .site-header, .title-container, #mobile-nav-menu, .publication-wrapper, .publication-container, .publication-info-container, .publication-expand-icon {
+  margin: 0px;
+  padding: 0px; }
+
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.wrapper {
+  max-width: -webkit-calc(800px - (0.8em * 2));
+  max-width: calc(800px - (0.8em * 2));
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.8em;
+  padding-right: 0.8em; }
+  @media screen and (max-width: 800px) {
+    .wrapper {
+      max-width: -webkit-calc(800px - (0.8em));
+      max-width: calc(800px - (0.8em));
+      padding-right: 0.8em;
+      padding-left: 0.8em; } }
+
+body, ul{
+  margin: 0px;
+  padding: 0px; }
+
+ul, ol {
+  margin-left: 1.6em;
+  }
+
+li > ul,
+li > ol {
+  margin-bottom: 0; }
+
+ul.listing {
+  list-style-type: none;
+  margin-left: 0px; }
+
+ul.listing li2.listing-seperator {
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 1.17em; }
+
+ul.listing li2.listing-item time {
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-right: 10px; }
+
+ul.listing li2.listing-item a {
+  font-weight: 400;
+  font-family: "Libre Franklin", "Open Sans", sans-serif; }
+
+.site-header {
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #777; }
+
+.site-header-container {
+  display: flex;
+  justify-content: space-between; }
+  @media screen and (max-width: 799px) {
+    .site-header-container {
+      padding-top: 0.4em;
+      padding-bottom: 0.4em; } }
+
+.nav-container {
+  align-self: flex-end; }
+
+.site-title {
+  font-family: "Libre Franklin", "Open Sans", sans-serif;
+  font-size: 1.75em;
+  font-variant: none;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-weight: 400;
+  color: #f1f1f1; }
+  .site-title:visited {
+    color: #f1f1f1;
+    text-decoration: none; }
+  .site-title:hover {
+    color: #72d0f8;
+    text-decoration: none; }
+
+@media screen and (max-width: 799px) {
+  .site-nav {
+    display: none; } }
+.site-nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px; }
+.site-nav li2 {
+  display: inline-block;
+  text-align: center;
+  font-family: "Libre Franklin", "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: capitalize;
+  line-height: 2.1;
+  padding-left: 0.8em;
+  padding-right: 0.8em; }
+  .site-nav li2:hover {
+    cursor: pointer; }
+    .site-nav li2:hover:not(.active) {
+      background-color: #6a6a6a;
+      border-top: 3px solid #6a6a6a;
+      border-bottom: 3px solid #0a97d3; }
+      .site-nav li2:hover:not(.active) .page-link {
+        color: #72d0f8; }
+.site-nav .active {
+  color: #72d0f8;
+  border-bottom: 3px solid #72d0f8; }
+.site-nav .page-link {
+  color: #f1f1f1; }
+  .site-nav .page-link:visited {
+    color: #f1f1f1;
+    text-decoration: none; }
+  .site-nav .page-link:hover {
+    color: #72d0f8;
+    text-decoration: none; }
+
+.mobile-nav-icon-container {
+  display: none;
+  padding: 0px; }
+  @media screen and (max-width: 799px) {
+    .mobile-nav-icon-container {
+      display: block;
+      font-size: 1.75em;
+      color: #f1f1f1; } }
+  .mobile-nav-icon-container:hover {
+    cursor: pointer;
+    color: #72d0f8;
+    text-decoration: none; }
+
+#mobile-nav-menu {
+  display: none;
+  background-color: #848484;
+  text-align: right;
+  width: 100%; }
+  #mobile-nav-menu ul {
+    list-style-type: none;
+    margin: 0px; }
+  #mobile-nav-menu li2 {
+    display: list-item;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 0.4em;
+    padding-right: 0.4em; }
+    #mobile-nav-menu li2:not(:first-child) {
+      border-top: 2px solid #7a7a7a; }
+  #mobile-nav-menu .page-link {
+    color: #f1f1f1;
+    font-family: "Libre Franklin", "Open Sans", sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+    font-size: 1.3em; }
+    #mobile-nav-menu .page-link:visited {
+      color: #f1f1f1;
+      text-decoration: none; }
+    #mobile-nav-menu .page-link:hover {
+      text-decoration: none; }
+  #mobile-nav-menu .active {
+    background-color: #72d0f8;
+    color: #72d0f8; }
+
+.site-footer {
+  position: relative;
+  bottom: 0;
+  border-top: 1px solid #bbbbbb;
+  padding: 0px;
+  margin: 0px;
+  background-color: #f1f1f1; }
+
+.footer-list {
+  float: right;
+  display: inline-block;
+  list-style-type: none;
+  overflow: hidden; }
+
+.footer-last-update {
+  float: left;
+  color: #999999;
+  padding-top: 0.2em;
+  padding-right: 0.8em; }
+  .footer-last-update:before {
+    text-transform: lowercase;
+    content: 'updated '; }
+
+.footer-list-item {
+  display: inline-block;
+  text-align: left;
+  padding-top: 0.4em;
+  padding-left: 1.6em;
+  vertical-align: top; }
+
+.footer-list-link {
+  color: #999999; }
+  .footer-list-link:visited {
+    color: #999999; }
+  .footer-list-link:hover {
+    color: #4d4d4d;
+    text-decoration: underline; }
+
+.footer-fa {
+  text-decoration: none; }
+  .footer-fa:visited {
+    color: #4d4d4d; }
+  .footer-fa:hover {
+    color: #4d4d4d; }
+
+.footer-wrapper {
+  clear: both;
+  font-family: "Libre Franklin", "Open Sans", sans-serif;
+  font-size: 0.75em;
+  width: 100%; }
+  @media screen and (max-width: 799px) {
+    .footer-wrapper {
+      font-size: 0.9em;
+      padding: 0.8em;
+      display: block; }
+      .footer-wrapper .footer-last-update {
+        width: 100%;
+        color: #999999;
+        padding: 0px;
+        margin: 0px;
+        margin-top: 0.8em; }
+      .footer-wrapper .footer-list {
+        float: left;
+        margin: 0px; }
+      .footer-wrapper .footer-list-item {
+        display: block;
+        text-align: left;
+        padding-left: 0px;
+        padding-top: 0.32em;
+        padding-bottom: 0.32em; } }
+
+.page-content {
+  padding: 0px; }
+  .page-content > p {
+    font-size: 1em; }
+
+.page-header {
+  margin-bottom: 0.8em; }
+
+.page-heading {
+  font-size: 20px; }
+
+a {
+color: #1772d0;
+text-decoration:none;
+}
+a:focus, a:hover {
+color: #f09228;
+text-decoration:none;
+}
+body,td,th,tr,p,a {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 18px
+}
+strong {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 18px;
+}
+heading {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 28px;
+font-weight: bold;
+}
+papertitle {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 19px;
+font-weight: 700;
+}
+name {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 35px;
+}
+name-cn {
+font-family: Microsoft Yahei;
+font-size: 33px;
+}
+em {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 21px;
+font-weight: 600
+}
+em2 {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 20px;
+}
+em3 {
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-size: 22px;
+}
+.one
+{
+width: 160px;
+height: 160px;
+position: relative;
+}
+.two
+{
+width: 160px;
+height: 160px;
+position: absolute;
+transition: opacity .2s ease-in-out;
+-moz-transition: opacity .2s ease-in-out;
+-webkit-transition: opacity .2s ease-in-out;
+}
+.fade {
+ transition: opacity .2s ease-in-out;
+ -moz-transition: opacity .2s ease-in-out;
+ -webkit-transition: opacity .2s ease-in-out;
+}
+.li {
+  display: flex;
+  justify-content: space-between;
+}
+span.highlight {
+    background-color: #ffffd0;
+}
+
+hr.soft {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  padding: 0;
+  margin: 0;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: green; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
