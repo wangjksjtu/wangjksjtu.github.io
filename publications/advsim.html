@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="AdvSim: Generating Safety-Critical Scenarios for Self-Driving Vehicles">
+    <meta name="author" content="Jingkang Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="advsim/advsim.css" media="screen" type="text/css"/> -->
+    <link rel="stylesheet" href="//rgl.s3.eu-central-1.amazonaws.com/static/css/rgl-screen-v3.css" media="screen" type="text/css">
+    <script type="text/javascript" src="//rgl.s3.eu-central-1.amazonaws.com/static/js/rgl-combined-v3.js" defer></script>
+    <style>
+        myh2 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+        myh2{font-size:1.53333333333rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}@media (min-width:860px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}
+    
+         myh3 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh3{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh3{font-size:1.9375rem;line-height:3.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:3.11111111111rem}}div#content
+	myh4 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh4{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh4{font-size:1.9375rem;line-height:2.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:2.11111111111rem}}div#content
+	
+	.citation2{margin-top:1.03333333333rem;border:2px solid #ddd;background-color:#f9f9f9;padding:20px}@media (min-width:550px){div#content>.publication .citation2{margin-top:1.0625rem}}@media (min-width:860px){div#content>.publication .citation2{margin-top:1.05555555556rem}}div#content>.publication    
+        .citation-body2:not(:first-child),div#content blockquote:not(:first-child),div#content
+    </style>    
+   
+    <title>AdvSim</title>
+</head>
+<body>
+<br>
+<br>
+<div id="content">            
+
+<div class="publication">
+<div class="header">
+	<myh2 class="title">AdvSim: Generating Safety-Critical Scenarios <br> for Self-Driving Vehicles</myh2>
+<br>
+<br>
+<div class="authors">
+    
+    <span class="author">
+        
+        <a href="../index.html">Jingkang Wang</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://www.avapun.com/">Ava Pun</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://www.linkedin.com/in/james-tu/">James Tu</a>
+        
+    </span>
+    
+     <span class="author">
+        
+        <a href="http://www.cs.toronto.edu/~manivasagam/">Sivabalan Manivasagam</a>
+        
+    </span>
+    <br>
+
+    <span class="author">
+        
+        <a href="https://scholar.google.ca/citations?user=SxZjNosAAAAJ&hl=en">Abbas Sadat</a>
+    
+    </span>
+    
+    <span class="author">
+        
+	    <a href="http://www.cs.toronto.edu/~sergio">Sergio Casas</a>
+    
+    </span>
+
+    <span class="author">
+        
+	    <a href="https://www.cs.toronto.edu/~mren/">Mengye Ren</a>
+    
+    </span>
+
+    <span class="author">
+        
+	    <a href="https://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>
+    
+    </span>
+
+
+</div>
+
+
+<div class="venue">
+    <span class="status">
+        In
+    </span>
+    Conference on Computer Vision and Pattern Recognition (CVPR), 2021
+</div>
+
+
+
+<div class="teaser">
+<figure>
+<a class="fluidbox" href="advsim/pipeline.png">
+	<img src="advsim/pipeline.png" data-caption="Overview of our proposed adversarial scenario generation pipeline. Our goal is to perturb the maneuvers of interactive actors in an existing scenario with adversarial behaviors that cause realistic autonomy system failures. Given an existing scenario and its original sensor data, we perturb the scenario and update accordingly how the SDV would observe the LiDAR sensor data based on the new scene configuration. We then evaluate the autonomy system on the modified scenario, compute an adversarial objective, and update the proposed perturbation using a search algorithm."/>
+</a>
+<figcaption>
+<p>
+<strong>Overview of our proposed adversarial
+	scenario generation pipeline.</strong> Our goal is to perturb the maneuvers of interactive actors in an existing scenario with adversarial behaviors that cause realistic autonomy system failures. Given an existing scenario and its original sensor data, we perturb the scenario and update accordingly how the SDV would observe the LiDAR sensor data based on the new scene configuration. We then evaluate the autonomy system on the modified scenario, compute an adversarial objective, and update the proposed perturbation using a search algorithm.
+</p>
+</figcaption>
+</figure>
+</div> <!-- teaser -->
+
+</div> <!-- header -->
+
+<div class="attachments">
+    <myh3>Resources</myh3>
+
+
+    
+        
+            
+                
+                    <a href="https://arxiv.org/pdf/2101.06549.pdf" target="_blank">
+                        <div class="attachment"><i class="pdf"></i>Paper
+                            <span class="size">(24.9 MB)</span>
+                        </div>
+                    </a>
+                
+            
+        
+    
+
+    
+        
+            
+                
+                    <a href="https://www.youtube.com/watch?v=PQR_6CLNczI" target="_blank">
+                        <div class="attachment"><i class="video"></i>Supplemental video (Youtube)
+                        </div>
+                    </a>
+                
+            
+                
+                    <a href="advsim/advsim_v2_5min.mp4" target="_blank">
+                        <div class="attachment"><i class="video"></i>Conference presentation
+                            <span class="size">(29.0 MB)</span>
+                        </div>
+                    </a>
+                
+    <a href="advsim/poster.jpg" target="_blank">
+        <div class="attachment"><i class="doi"></i>Conference poster
+	<span class="size">(571 KB)</span>
+	</div>
+    </a>
+
+
+<a href="#" class="attachment cite"><i class="cite"></i>Cite</a>
+
+</div> <!-- attachments -->
+
+
+<br>
+<myh3>Abstract</myh3>
+<div class="abstract">
+<p>As self-driving systems become better, simulating scenarios where the autonomy stack may fail becomes more important. Traditionally, those scenarios are generated for a few scenes with respect to the planning module that takes ground-truth actor states as input. This does not scale and cannot identify all possible autonomy failures, such as perception failures due to occlusion. In this paper, we propose AdvSim, an adversarial framework to generate safety-critical scenarios for any LiDAR-based autonomy system. Given an initial traffic scenario, AdvSim modifies the actors' trajectories in a physically plausible manner and updates the LiDAR sensor data to match the perturbed world. Importantly, by simulating directly from sensor data, we obtain adversarial scenarios that are safety-critical for the full autonomy stack. Our experiments show that our approach is general and can identify thousands of semantically meaningful safety-critical scenarios for a wide range of modern self-driving systems. Furthermore, we show that the robustness and safety of these systems can be further improved by training them with scenarios generated by AdvSim.</p>
+</div>
+
+
+<div class="citation">
+     <h5>BibTeX</h5>
+    <pre class="citation-body">@article{Wang2021AdvSim,
+    author = {Jingkang Wang and Ava Pun and James Tu and Sivabalan Manivasagam and Abbas Sadat and Sergio Casas and Mengye Ren and Raquel Urtasun},
+    title = {AdvSim: Generating Safety-Critical Scenarios for Self-Driving Vehicles},
+    journal = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year = {2021},
+}</pre>
+    
+    <h5>Text citation</h5>
+    <div class="citation-body"><p> Jingkang Wang, Ava Pun, James Tu, Sivabalan Manivasagam, Abbas Sadat, Sergio Casas, Mengye Ren, and Raquel Urtasun. AdvSim: Generating Safety-Critical Scenarios for Self-Driving Vehicles. In <em>Conference on Computer Vision and Pattern Recognition (CVPR), 2021</em>.</p></div>
+       
+</div> <!-- citation -->
+<br>
+	<myh3>Video</myh3>
+                <video preload="none" controls="controls" poster="advsim/advsim_thumb.png" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="advsim/advsim_v2_5min.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+<myh4>Citation</myh4>
+<div class="citation2" style="margin-top: 0.5em;">
+<pre class="citation-body2">@article{Wang2021AdvSim,
+    author = {Jingkang Wang and Ava Pun and James Tu and Sivabalan Manivasagam and Abbas Sadat and Sergio Casas and Mengye Ren and Raquel Urtasun},
+    title = {AdvSim: Generating Safety-Critical Scenarios for Self-Driving Vehicles},
+    journal = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year = {2021},
+}
+</pre>
+</div>
+
+</div> <!-- publication -->
+</div>
+
+</body>
+</html>
+
