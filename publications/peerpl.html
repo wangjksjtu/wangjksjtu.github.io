@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Policy Learning Using Weak Supervision">
+    <meta name="author" content="Jingkang Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//rgl.s3.eu-central-1.amazonaws.com/static/css/rgl-screen-v3.css" media="screen" type="text/css">
+    <script type="text/javascript" src="//rgl.s3.eu-central-1.amazonaws.com/static/js/rgl-combined-v3.js" defer></script>
+    <style>
+        myh2 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+        myh2{font-size:1.53333333333rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}@media (min-width:860px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}
+    
+         myh3 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh3{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh3{font-size:1.9375rem;line-height:3.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:3.11111111111rem}}div#content
+	myh4 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh4{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh4{font-size:1.9375rem;line-height:2.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:2.11111111111rem}}div#content
+    
+    myh5 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+    myh5{font-size:1.3rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh5{font-size:1.3rem;line-height:2.125rem}}@media (min-width:860px){div#content myh5{font-size:1.3rem;line-height:2.11111111111rem}}div#content
+
+    myh6 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+    myh6{font-size:1.0rem;line-height:1.0rem}@media (min-width:550px){div#content myh6{font-size:1.0rem;line-height:1.0rem}}@media (min-width:860px){div#content myh6{font-size:1.0rem;line-height:1.0rem}}div#content
+
+    mytext{font-size:1.05rem;line-height:1.05rem}@media (min-width:550px){div#content mytext{font-size:1.05rem;line-height:1.05rem}}@media (min-width:860px){div#content mytext{font-size:1.05rem;line-height:1.05rem}}div#content
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+        ul {
+    text-align: left;
+    }
+	.citation2{margin-top:1.03333333333rem;border:2px solid #ddd;background-color:#f9f9f9;padding:20px}@media (min-width:550px){div#content>.publication .citation2{margin-top:1.0625rem}}@media (min-width:860px){div#content>.publication .citation2{margin-top:1.05555555556rem}}div#content>.publication    
+        .citation-body2:not(:first-child),div#content blockquote:not(:first-child),div#content
+    </style>    
+   
+    <title>PeerPL</title>
+</head>
+<body>
+<br>
+<br>
+<div id="content">            
+
+<div class="publication">
+<div class="header">
+	<myh2 class="title">Policy Learning Using Weak Supervision</myh2>
+<br>
+<br>
+<div class="authors">
+    
+    <span class="author">
+        
+        <a href="../index.html">Jingkang Wang*</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://scholar.google.com/citations?user=bzPCv_8AAAAJ&hl=en">Hongyi Guo*</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://users.soe.ucsc.edu/~zhaoweizhu/">Zhaowei Zhu*</a>
+        
+    </span>
+    
+     <span class="author">
+        
+        <a href="http://www.yliuu.com/">Yang Liu</a>
+        
+    </span>
+    <br>
+
+</div>
+
+
+<div class="venue">
+    <span class="status">
+        In
+    </span>
+    Advances in Neural Information Processing Systems (NeurIPS), 2021
+</div>
+
+<div class="teaser">
+<figure>
+<a class="fluidbox" href="peerpl/motivation.png">
+	<img src="peerpl/motivation.png" data-caption="Weak supervision signals are everywhere! We provide a unified formulation of the weakly supervised policy learning problems. We also propose PeerPL, a new way to perform policy evaluation under weak supervision."/>
+</a>
+<figcaption>
+<myh6>Weak supervision signals are everywhere! We provide a unified formulation of the weakly supervised policy learning problems. We also propose PeerPL, a new way to perform policy evaluation under weak supervision. </myh6>
+</figcaption>
+</figure>
+</div>
+
+    <br>
+    <hr>
+    <table align=center width=700>
+        <center><myh5>News</myh5></center>
+        <tr>
+        <ul>
+            <li><strong>[Dec 2021 - NeurIPS21 week]</strong> Come and check our poster: <a href="https://neurips.cc/virtual/2021/poster/27948">neurips.cc/virtual/2021/poster/27948</a> (live session: <strong>Wed 8 Dec 12:30 a.m. PST — 2 a.m. PST</strong>)!</li>
+            <li><strong>[Dec 2021]</strong> Project page is up: <a href="https://arxiv.org/pdf/2010.01748.pdf">[Paper]</a>, <a href="peerpl/poster.png">[Poster]</a> and <a href="https://neurips.cc/media/neurips-2021/Slides/27948.pdf">[Slide]</a> are online.</li> 
+            <li><strong>[Oct 2021]</strong> Our code is available here: <a href="https://github.com/wangjksjtu/PeerPL">https://github.com/wangjksjtu/PeerPL</a></li> 
+        </ul>
+        </tr>
+    </table>
+    <br>
+    <hr>
+
+</div> <!-- header -->
+
+<div class="attachments">
+    <myh3>Resources</myh3>
+      
+    <!-- <a href="https://arxiv.org/pdf/2010.01748.pdf" target="_blank">
+	<div class="attachment"><i class="pdf"></i>Paper
+	</div>
+    </a> -->
+
+    <a href="https://openreview.net/forum?id=UZgQhsTYe3R" target="_blank">
+	<div class="attachment"><i class="pdf"></i>OpenReview Discussion
+	</div>
+    </a>
+
+    <a href="https://github.com/wangjksjtu/PeerPL/" target="_blank">
+        <div class="attachment"><i class="doi"></i>Code (Github)
+	</div>
+    </a>
+
+    <a href="https://neurips.cc/virtual/2021/poster/27948" target="_blank">
+	    <div class="attachment"><i class="video"></i>Conference Presentation
+	</div>
+    </a>
+
+    <a href="https://neurips.cc/media/neurips-2021/Slides/27948.pdf" target="_blank">
+	<div class="attachment"><i class="pdf"></i>Slide
+	    <span class="size">(5.2 MB)</span>
+	</div>
+    </a>
+
+    <a href="peerpl/poster.pdf" target="_blank">
+        <div class="attachment"><i class="doi"></i>Conference poster
+	<span class="size">(4.0 MB)</span>
+	</div>
+    </a>
+    <a href="#citation" class="attachment cite"><i class="cite"></i>Cite</a>
+</div>
+
+
+<br>
+<myh3>Abstract</myh3>
+<div class="abstract">
+<p><mytext>Most existing policy learning solutions require the learning agents to receive high-quality supervision signals such as well-designed rewards in reinforcement learning (RL) or high-quality expert demonstrations in behavioral cloning (BC). These quality supervisions are usually infeasible or prohibitively expensive to obtain in practice. We aim for a unified framework that leverages the available cheap weak supervisions to perform policy learning efficiently. To handle this problem, we treat the "weak supervision" as imperfect information coming from a peer agent, and evaluate the learning agent's policy based on a "correlated agreement" with the peer agent's policy (instead of simple agreements). Our approach explicitly punishes a policy for overfitting to the weak supervision. In addition to theoretical guarantees, extensive evaluations on tasks including RL with noisy rewards, BC with weak demonstrations, and standard policy co-training show that our method leads to substantial performance improvements, especially when the complexity or the noise of the learning environments is high.</mytext></p>
+</div>
+
+<!--
+<div class="citation">
+     <h5>BibTeX</h5>
+    <pre class="citation-body">
+@inproceedings{wang2021policy,
+title     = {Policy Learning Using Weak Supervision},
+author    = {Jingkang Wang and Hongyi Guo and Zhaowei Zhu and Yang Liu},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year      = {2021},
+url       = {https://openreview.net/forum?id=UZgQhsTYe3R}
+}
+</pre>
+    
+    <h5>Text citation</h5>
+    <div class="citation-body"><p> Jingkang Wang, Hongyi Guo, Zhaowei Zhu and Yang Liu. Policy Learning Using Weak Supervision. In <em>Thirty-Fifth Conference on Neural Information Processing Systems (NeurIPS), 2021</em>.</p></div>
+       
+</div>
+-->
+<br>
+
+
+<myh3>PeerPL with Correlated Agreement</myh3>
+<figcaption></figcaption>
+<figure>
+<a class="fluidbox" href="peerpl/peerpl.png" >
+	<img src="peerpl/peerpl.png" data-caption=""/>
+</a>
+<figcaption></figcaption>
+</figure>
+
+<myh3>Results</myh3>
+<figure>
+<a class="fluidbox" href="peerpl/result.png" >
+	<img src="peerpl/result.png" data-caption="" width=1000/>
+</a>
+<figcaption></figcaption>
+</figure>
+<myh3>PeerPL can also be plugged in DAgger!</myh3>
+<figcaption></figcaption>
+<figure>
+<a class="fluidbox" href="peerpl/il_results.png" >
+	<img src="peerpl/il_results.png" data-caption="" width=1000/>
+</a>
+</figure>
+
+<!--
+<br>
+	<myh3>Video</myh3>
+                <video preload="none" controls="controls" poster="peerpl/peerpl_thumb.png" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="peerpl/peerpl_neurips.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+</div> -->
+<!-- publication -->
+
+<br>
+<myh4>Citation</myh4>
+<div class="citation2" style="margin-top: 0.5em;">
+<!--<pre class="citation-body2">
+@inproceedings{wang2021policy,
+title     = {Policy Learning Using Weak Supervision},
+author    = {Jingkang Wang and Hongyi Guo and Zhaowei Zhu and Yang Liu},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year      = {2021},
+url       = {https://openreview.net/forum?id=UZgQhsTYe3R}
+}
+</pre>
+-->
+    <h5>BibTeX</h5>
+    <pre class="citation-body">
+@inproceedings{wang2021policy,
+title     = {Policy Learning Using Weak Supervision},
+author    = {Jingkang Wang and Hongyi Guo and Zhaowei Zhu and Yang Liu},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year      = {2021},
+url       = {https://openreview.net/forum?id=UZgQhsTYe3R}
+}
+</pre>
+    
+    <h5>Text citation</h5>
+    <div class="citation-body"><p> Jingkang Wang, Hongyi Guo, Zhaowei Zhu and Yang Liu. Policy Learning Using Weak Supervision. In <em>Thirty-Fifth Conference on Neural Information Processing Systems (NeurIPS), 2021</em>.</p></div>
+
+</div>
+
+
+<a id="citation"></a>
+<br>
+<myh4>Past Works</myh4>
+<div class="citation2" style="margin-top: 0.5em;">
+</pre>
+<pre class="citation-body2">
+@inproceedings{liu2020peer,
+title     = {Peer Loss Functions: Learning from Noisy Labels without Knowing Noise Rates},
+author    = {Yang Liu and Hongyi Guo},
+booktitle = {Thirty-Seventh International Conference on Machine Learning},
+year      = {2020},
+}
+</pre>
+<pre class="citation-body2">
+@inproceedings{wang2020reinforcement,
+title     = {Reinforcement Learning with Perturbed Rewards},
+author    = {Jingkang Wang and Yang Liu and Bo Li},
+booktitle = {Thirty-Fourth AAAI Conference on Artificial Intelligence},
+year      = {2020},
+}
+</div>
+
+
+</body>
+</html>
+

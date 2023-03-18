@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="0; URL=https://waabi.ai/research/cadsim" />
+    <meta charset="utf-8">
+    <meta name="description" content="CADSim: Robust and Scalable in-the-wild 3D Reconstruction for Controllable Sensor Simulation">
+    <meta name="author" content="Jingkang Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="advsim/advsim.css" media="screen" type="text/css"/> -->
+    <link rel="stylesheet" href="//rgl.s3.eu-central-1.amazonaws.com/static/css/rgl-screen-v3.css" media="screen" type="text/css">
+    <script type="text/javascript" src="//rgl.s3.eu-central-1.amazonaws.com/static/js/rgl-combined-v3.js" defer></script>
+    <style>
+        myh2 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+        myh2{font-size:1.53333333333rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}@media (min-width:860px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}
+    
+         myh3 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh3{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh3{font-size:1.9375rem;line-height:3.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:3.11111111111rem}}div#content
+	myh4 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh4{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh4{font-size:1.9375rem;line-height:2.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:2.11111111111rem}}div#content
+        myh5 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+    myh5{font-size:1.3rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh5{font-size:1.3rem;line-height:2.125rem}}@media (min-width:860px){div#content myh5{font-size:1.3rem;line-height:2.11111111111rem}}div#content
+
+
+	.citation2{margin-top:1.03333333333rem;border:2px solid #ddd;background-color:#f9f9f9;padding:20px}@media (min-width:550px){div#content>.publication .citation2{margin-top:1.0625rem}}@media (min-width:860px){div#content>.publication .citation2{margin-top:1.05555555556rem}}div#content>.publication    
+        .citation-body2:not(:first-child),div#content blockquote:not(:first-child),div#content
+    </style>    
+   
+    <title>CADSim</title>
+</head>
+<body>
+<br>
+<br>
+<div id="content">            
+
+<div class="publication">
+<div class="header">
+	<myh2 class="title"> CADSim: Robust and Scalable in-the-wild <br> 3D Reconstruction for Controllable Sensor Simulation</myh2>
+<br>
+<br>
+<div class="authors">
+    
+    <span class="author">
+        
+        <a href="../index.html">Jingkang Wang</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://www.cs.toronto.edu/~manivasagam/">Sivabalan Manivasagam</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://tmux.top/">Yun Chen</a>
+        
+    </span>
+    
+     <span class="author">
+        
+        <a href="https://www.yangze.tech/">Ze Yang</a>
+        
+    </span>
+    <br>
+
+    <span class="author">
+        
+        <a href="https://siegedog.com/">Ioan Andrei Bârsan</a>
+    
+    </span>
+    
+    <span class="author">
+        
+	    <a href="http://www.cs.toronto.edu/~ajyang/">Anqi Joyce Yang</a>
+    
+    </span>
+
+    <span class="author">
+        
+	    <a href="https://people.csail.mit.edu/weichium/">Wei-Chiu Ma</a>
+    
+    </span>
+
+    <span class="author">
+        
+	    <a href="https://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>
+    
+    </span>
+
+
+</div>
+
+
+<div class="venue">
+    <span class="status">
+        In
+    </span>
+    Conference on Robot Learning (CoRL), 2022
+</div>
+
+
+
+<div class="teaser">
+<figure>
+<a class="fluidbox" href="cadsim/teaser.png">
+	<img src="cadsim/teaser.png" data-caption="CADSim recovers shape, appearance and illumination in a robust and scalable way from sensor observations. The reconstructed assets are of high fidelity, part-aware, geometry-aligned and compatible with graphics engine, enabling efficient, realistic and controllable simulation."/>
+</a>
+<figcaption>
+<p>
+<strong>CADSim recovers shape, appearance and illumination in a robust and scalable way from sensor observations.</strong> The reconstructed assets are of high fidelity, part-aware, geometry-aligned and compatible with graphics engine, enabling efficient, realistic and controllable simulation.
+</p>
+</figcaption>
+</figure>
+</div> <!-- teaser -->
+</div> <!-- header -->
+
+    <br>
+    <hr>
+    <table align=center width=700>
+        <center><myh5>News</myh5></center>
+        <tr>
+        <ul>
+            <li><strong>[Dec 2022 - CoRL22 week]</strong> Come and check out our <a href="cadsim/CADSim-poster.pdf">poster</a>! Poster session: <strong>Dec 17 9:35AM-10:50AM NZST (GMT+13)</strong></li>
+            <li><strong>[Dec 2022]</strong> Project page is up: <a href="https://openreview.net/pdf?id=Mp3Y5jd7rnW">[Paper]</a>, <a href="cadsim/CADSim-poster.pdf">[Poster]</a> and <a href="http://www.cs.toronto.edu/~wangjk/publications/cadsim/cadsim_slide.pdf">[Slide]</a> are online.</li> 
+        </ul>
+        </tr>
+    </table>
+    <br>
+    <hr>
+
+<div class="attachments">
+    <myh3>Resources</myh3>
+                
+                    <a href="https://openreview.net/pdf?id=Mp3Y5jd7rnW" target="_blank">
+                        <div class="attachment"><i class="pdf"></i>Paper
+                            <span class="size">(7.8 MB)</span>
+                        </div>
+                    </a>
+    
+                
+                    <a href="https://www.youtube.com/watch?v=EAjCFrF3VFg" target="_blank">
+                        <div class="attachment"><i class="video"></i>Conference presentation (Youtube)
+                        </div>
+                    </a>
+                
+                     <a href="cadsim/cadsim_slide.pdf" target="_blank">
+                        <div class="attachment"><i class="pdf"></i>Slide (20.4 MB)
+                        </div>
+                    </a>
+                
+    <a href="cadsim/CADSim-poster.pdf" target="_blank">
+        <div class="attachment"><i class="doi"></i>Conference poster
+	<span class="size">(3.6 MB)</span>
+	</div>
+    </a>
+    
+    <a href="#citation" class="attachment cite"><i class="cite"></i>Cite</a>
+
+</div> <!-- attachments -->
+
+
+<br>
+<myh3>Abstract</myh3>
+<div class="abstract">
+<p>
+Realistic simulation is key to enabling safe and scalable development of self-driving vehicles. A core component is simulating the sensors so that the entire autonomy system can be tested in simulation. Sensor simulation involves modeling traffic participants, such as vehicles, with high-quality appearance and articulated geometry, and rendering them in real-time. The self-driving industry has employed artists to build these assets. However, this is expensive, slow, and may not reflect reality. Instead, reconstructing assets automatically from sensor data collected in the wild would provide a better path to generating a diverse and large set that provides good real-world coverage. However, current reconstruction approaches struggle on in-the-wild sensor data, due to its sparsity and noise. To tackle these issues, we present CADSim which combines part-aware object-class priors via a small set of CAD models with differentiable rendering to automatically reconstruct vehicle geometry, including articulated wheels, with high-quality appearance. Our experiments show our approach recovers more accurate shape from sparse data compared to existing approaches. Importantly, it also trains and renders efficiently. We demonstrate our reconstructed vehicles in a wide range of applications, including accurate testing of autonomy perception systems.
+</p>
+</div>
+
+</div> 
+	<myh3>Video</myh3>
+                <video preload="none" controls="controls" poster="cadsim/cadsim_thumbnail2.png" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="cadsim/cadsim_corl_denoise.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+<br>
+
+	<myh3>Examples (baked texture)</myh3>
+
+
+                <video preload="none" controls="controls" poster="cadsim/asset_thumbnail.jpg" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="cadsim/output_15x12_mini_loop3.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+        <myh3>CADSim Applications (NVS, Mixed Reality CameraSim)</myh3>
+                <video preload="none" controls="controls" poster="cadsim/cadsim_app_thumbnail.jpg" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="cadsim/cadsim_app.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+<br>
+
+<myh4>Limitations</myh4>
+<br>
+<ul>
+	<li><strong>Fixed topology:</strong> CADSim’s main assumption is that it requires CAD models for the object class of interest. We note that CAD models are readily available for most object classes, and that our approach only requires
+encoding semantic priors for a single CAD asset, as our energy-model optimization allows for transfer
+of these priors to other assets of the same class</li>
+	<li><strong>Limited inpainting capcity:</strong> Although we apply local smoothness and symmetry priors in the appearance energy terms, CADSim still cannot hallucinate missing pixels if the coverage is too limited. </li>
+	<li><strong>Rely on segmentation masks, LiDAR points and rough camera parameters</strong></li>
+	<li><strong>Limited quality for non-vehicle classes or when the topology is complex</strong></li>
+</ul>
+
+<br>
+
+<myh4>Citation</myh4>
+
+<a id="citation"></a>
+<div class="citation2" style="margin-top: 0.5em;">
+<pre class="citation-body2">
+@inproceedings{wang2022cadsim,
+  author    = {Wang, Jingkang and Manivasagam, Sivabalan and Chen, Yun and Yang, Ze, and and Yang, Anqi and Bârsan Andrei and Ma, Wei-Chiu and Urtasun, Raquel}
+  title     = {CADSim: Robust, Scalable and Controllable in-the-wild 3D Reconstruction for Sensor Simulation},
+  booktitle = {{CoRL}},
+  year      = {2022}
+}
+</pre>
+</div>
+<br>
+</div> <!-- publication -->
+</div>
+
+</body>
+</html>
+

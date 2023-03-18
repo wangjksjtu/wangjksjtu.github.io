@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Adversarial Attack Generation Empowered by Min-Max Optimization">
+    <meta name="author" content="Jingkang Wang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//rgl.s3.eu-central-1.amazonaws.com/static/css/rgl-screen-v3.css" media="screen" type="text/css">
+    <script type="text/javascript" src="//rgl.s3.eu-central-1.amazonaws.com/static/js/rgl-combined-v3.js" defer></script>
+    <style>
+        myh2 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+        myh2{font-size:1.53333333333rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}@media (min-width:860px){div#content myh2{font-size:2.3125rem;line-height:3.125rem}}
+    
+         myh3 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh3{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh3{font-size:1.9375rem;line-height:3.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:3.11111111111rem}}div#content
+	myh4 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: normal;
+	}
+    	myh4{font-size:1.4rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh4{font-size:1.9375rem;line-height:2.125rem}}@media (min-width:860px){div#content myh3{font-size:2.0rem;line-height:2.11111111111rem}}div#content
+    
+    myh5 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+    myh5{font-size:1.3rem;line-height:1.53333333333rem}@media (min-width:550px){div#content myh5{font-size:1.3rem;line-height:2.125rem}}@media (min-width:860px){div#content myh5{font-size:1.3rem;line-height:2.11111111111rem}}div#content
+
+    myh6 {
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	
+	   font-weight: bold;
+	}
+    myh6{font-size:1.0rem;line-height:1.0rem}@media (min-width:550px){div#content myh6{font-size:1.0rem;line-height:1.0rem}}@media (min-width:860px){div#content myh6{font-size:1.0rem;line-height:1.0rem}}div#content
+
+    mytext{font-size:1.05rem;line-height:1.05rem}@media (min-width:550px){div#content mytext{font-size:1.05rem;line-height:1.05rem}}@media (min-width:860px){div#content mytext{font-size:1.05rem;line-height:1.05rem}}div#content
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+        ul {
+    text-align: left;
+    }
+	.citation2{margin-top:1.03333333333rem;border:2px solid #ddd;background-color:#f9f9f9;padding:20px}@media (min-width:550px){div#content>.publication .citation2{margin-top:1.0625rem}}@media (min-width:860px){div#content>.publication .citation2{margin-top:1.05555555556rem}}div#content>.publication    
+        .citation-body2:not(:first-child),div#content blockquote:not(:first-child),div#content
+    </style>    
+   
+    <title>minmax-adv</title>
+</head>
+<body>
+<br>
+<br>
+<div id="content">            
+
+<div class="publication">
+<div class="header">
+	<myh2 class="title">Adversarial Attack Generation Empowered by <br> Min-Max Optimization</myh2>
+<br>
+<br>
+<div class="authors">
+    
+    <span class="author">
+        
+        <a href="../index.html">Jingkang Wang</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="http://cis.csuohio.edu/~t.zhang/">Tianyun Zhang</a>
+        
+    </span>
+    
+    <span class="author">
+        
+        <a href="https://lsjxjtu.github.io/index.html">Sijia Liu</a>
+        
+    </span>
+    
+     <span class="author">
+        
+        <a href="https://sites.google.com/site/pinyuchenpage/">Pin-Yu Chen</a>
+        
+    </span>
+    <br>
+
+    <span class="author">
+        
+        <a href="https://c0ldstudy.github.io/about/">Jiacen Xu</a>
+    
+    </span>
+    
+    <span class="author">
+        
+	    <a href="https://ecs.syr.edu/faculty/fardad/">Makan Fardad</a>
+    
+    </span>
+
+    <span class="author">
+        
+	    <a href="https://aisecure.github.io/">Bo Li</a>
+    
+    </span>
+
+</div>
+
+
+<div class="venue">
+    <span class="status">
+        In
+    </span>
+    Advances in Neural Information Processing Systems (NeurIPS), 2021
+</div>
+
+<div class="teaser">
+<figure>
+<a class="fluidbox" href="minmax-adv/revisit-minmax.png">
+	<img src="minmax-adv/revisit-minmax.png" data-caption="We propose a unified min-max framework for adversarial attack generation across multiple domains. We showcase this unified framework in three attack generation problems -- attacking model ensembles, devising universal perturbation under multiple inputs, and crafting attacks resilient to data transformations."/>
+</a>
+<figcaption>
+<myh6>Beyond AT, can other types of min-max formulation and optimization techniques advance the research in adversarial attack generation?</myh6> 
+<mytext>In this paper, we give an affirmative answer corroborated by the substantial performance gain and the ability of self-learned risk interpretation using our proposed min-max framework on several tasks for
+adversarial attack.</mytext>
+</figcaption>
+</figure>
+</div>
+
+    <br>
+    <hr>
+    <table align=center width=700>
+        <center><myh5>News</myh5></center>
+        <tr>
+        <ul>
+            <li><strong>[Dec 2021 - NeurIPS21 week]</strong> Come and check our poster: <a href="https://neurips.cc/virtual/2021/poster/27929">neurips.cc/virtual/2021/poster/27929</a> (live session: <strong>Wed 8 Dec 4:30 p.m. PST — 6 p.m. PST</strong>)!</li>
+            <li><strong>[Dec 2021]</strong> Project page is up: <a href=https://arxiv.org/pdf/1906.03563.pdf">[Paper]</a>, <a href="minmax-adv/poster.png">[Poster]</a> and <a href="https://neurips.cc/media/neurips-2021/Slides/27929.pdf">[Slide]</a> are online.</li> 
+            <li><strong>[Dec 2021]</strong> A minimal pytorch implementation of our APGDA attack is available <a href="https://github.com/wangjksjtu/minmax-adv/blob/main/pytorch/torchattacks/attacks/apgda.py">here</a> (only several lines added compared to standard PGD)!  
+            <li><strong>[Oct 2021]</strong> Our code (TF 1.x) is available here: <a href="https://github.com/wangjksjtu/minmax-adv">https://github.com/wangjksjtu/minmax-adv</a></li> 
+        </ul>
+        </tr>
+    </table>
+    <br>
+    <hr>
+
+</div> <!-- header -->
+
+<div class="attachments">
+    <myh3>Resources</myh3>
+      
+    <a href="https://arxiv.org/pdf/1906.03563.pdf" target="_blank">
+	<div class="attachment"><i class="pdf"></i>Paper
+	</div>
+    </a>
+
+    <a href="https://github.com/wangjksjtu/minmax-adv/" target="_blank">
+        <div class="attachment"><i class="doi"></i>Code (Github)
+	</div>
+    </a>
+
+    <a href="https://neurips.cc/virtual/2021/poster/27929" target="_blank">
+	    <div class="attachment"><i class="video"></i>Conference Presentation
+	</div>
+    </a>
+
+    <a href="https://neurips.cc/media/neurips-2021/Slides/27929.pdf" target="_blank">
+	<div class="attachment"><i class="pdf"></i>Slide
+	    <span class="size">(3.8 MB)</span>
+	</div>
+    </a>
+
+    <a href="minmax-adv/poster.png" target="_blank">
+        <div class="attachment"><i class="doi"></i>Conference poster
+	<span class="size">(2.6 MB)</span>
+	</div>
+    </a>
+    <a href="#citation" class="attachment cite"><i class="cite"></i>Cite</a>
+</div>
+
+
+<br>
+<myh3>Abstract</myh3>
+<div class="abstract">
+<p><mytext>The worst-case training principle that minimizes the maximal adversarial loss, also known as adversarial training (AT), has shown to be a state-of-the-art approach for enhancing adversarial robustness. Nevertheless, min-max optimization beyond the purpose of AT has not been rigorously explored in the adversarial context. In this paper, we show how a general framework of min-max optimization over multiple domains can be leveraged to advance the design of different types of adversarial attacks. In particular, given a set of risk sources, minimizing the worst-case attack loss can be reformulated as a min-max problem by introducing domain weights that are maximized over the probability simplex of the domain set. We showcase this unified framework in three attack generation problems -- attacking model ensembles, devising universal perturbation under multiple inputs, and crafting attacks resilient to data transformations. Extensive experiments demonstrate that our approach leads to substantial attack improvement over the existing heuristic strategies as well as robustness improvement over state-of-the-art defense methods trained to be robust against multiple perturbation types. Furthermore, we find that the self-adjusted domain weights learned from our min-max framework can provide a holistic tool to explain the difficulty level of attack across domains.</mytext></p>
+</div>
+
+<!--
+<div class="citation">
+     <h5>BibTeX</h5>
+    <pre class="citation-body">
+@inproceedings{wang2021adversarial,
+title = {Adversarial Attack Generation Empowered by Min-Max Optimization},
+author = {Jingkang Wang and Tianyun Zhang and Sijia Liu and Pin-Yu Chen and Jiacen Xu and Makan Fardad and Bo Li},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year = {2021},
+url = {https://openreview.net/forum?id=xlNpxfGMTTu}
+}</pre>
+    
+    <h5>Text citation</h5>
+    <div class="citation-body"><p> Jingkang Wang, Tianyun Zhang, Sijia Liu, Pin-Yu Chen, Jiacen Xu, Makan Fardad and Bo Li. Adversarial Attack Generation Empowered by Min-Max Optimization. In <em>Thirty-Fifth Conference on Neural Information Processing Systems (NeurIPS), 2021</em>.</p></div>
+       
+</div>
+-->
+<br>
+<myh3>Min-Max Power in Attack Design</myh3>
+<figcaption>
+</figcaption>
+<myh5>(a) Ensemble Attack over Multiple Models</myh5>
+<figure>
+<a class="fluidbox" href="minmax-adv/attack_0.png">
+	<img src="minmax-adv/attack_0.png" data-caption="" width="1000"/>
+</a>
+</figure>
+<myh5>(a) Universal perturbation over multiple examples</myh5>
+<figure>
+<a class="fluidbox" href="minmax-adv/attack_1.png">
+	<img src="minmax-adv/attack_1.png" data-caption="" width="1000"/>
+</a>
+</figure>
+<myh5>(a) Robust attack over data transformations</myh5>
+<figure>
+<a class="fluidbox" href="minmax-adv/attack_2.png">
+	<img src="minmax-adv/attack_2.png" data-caption="" width="1000"/>
+</a>
+</figure>
+<br>
+<myh3>Results</myh3>
+<figcaption>
+</figcaption>
+<myh5>(a) Significant improvements over the average strategy on three robust adversarial attacks</myh5>
+<figcaption>
+</figcaption>
+<figure>
+<a class="fluidbox" href="minmax-adv/result_0.png">
+	<img src="minmax-adv/result_0.png" data-caption=""/>
+</a>
+</figure>
+<myh5>(b) Outperforms heuristic strategies in an affordable way</myh5>
+<br>
+<figure>
+<a class="fluidbox" href="minmax-adv/result_1.png">
+	<img src="minmax-adv/result_1.png" data-caption="" width="1000"/>
+</a>
+</figure>
+
+<myh5>(c) State-of-the-art defense over multiple perturbation domains</myh5>
+<br>
+<figure>
+<a class="fluidbox" href="minmax-adv/result_2.png">
+	<img src="minmax-adv/result_2.png" data-caption=""/>
+</a>
+</figure>
+
+<myh5>(d) A holistic tool to interpret the risk of different domain sources</myh5>
+<figcaption>
+</figcaption>
+<figure>
+<a class="fluidbox" href="minmax-adv/result_3.png">
+	<img src="minmax-adv/result_3.png" data-caption=""/>
+</a>
+</figure>
+
+<!--
+<br>
+	<myh3>Video</myh3>
+                <video preload="none" controls="controls" poster="minmax-adv/minmax_thumb.png" style="margin-bottom: 2em; margin-top: 0.5em;">
+                    <source src="minmax-adv/minmax-adv_neurips.mp4" type="video/mp4"/>
+                    <p>Your browser does not support playing this video. Please download the video below.</p>
+                </video>
+
+</div> -->
+<!-- publication -->
+
+<br>
+<myh4>Citation</myh4>
+
+<a id="citation"></a>
+<div class="citation">
+     <h5>BibTeX</h5>
+    <pre class="citation-body">
+@inproceedings{wang2021adversarial,
+title = {Adversarial Attack Generation Empowered by Min-Max Optimization},
+author = {Jingkang Wang and Tianyun Zhang and Sijia Liu and Pin-Yu Chen and Jiacen Xu and Makan Fardad and Bo Li},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year = {2021},
+url = {https://openreview.net/forum?id=xlNpxfGMTTu}
+}</pre>
+    
+    <h5>Text citation</h5>
+    <div class="citation-body"><p> Jingkang Wang, Tianyun Zhang, Sijia Liu, Pin-Yu Chen, Jiacen Xu, Makan Fardad and Bo Li. Adversarial Attack Generation Empowered by Min-Max Optimization. In <em>Thirty-Fifth Conference on Neural Information Processing Systems (NeurIPS), 2021</em>.</p></div>
+       
+</div>
+
+<!--
+<div class="citation2" style="margin-top: 0.5em;">
+<pre class="citation-body2">
+@inproceedings{wang2021adversarial,
+title     = {Adversarial Attack Generation Empowered by Min-Max Optimization},
+author    = {Jingkang Wang and Tianyun Zhang and Sijia Liu and Pin-Yu Chen and Jiacen Xu and Makan Fardad and Bo Li},
+booktitle = {Thirty-Fifth Conference on Neural Information Processing Systems},
+year      = {2021},
+url       = {https://openreview.net/forum?id=xlNpxfGMTTu}
+}
+</pre>
+</div>
+-->
+
+
+
+</body>
+</html>
+
